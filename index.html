@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Himpunan & Relasi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="music-toggle-btn">Musik Off</button>
+
+    <main class="content-container">
+        <header>
+            <h1>Analisis Himpunan Komposisi</h1>
+            <p>Projek Matematika 🔥💀</p>
+        </header>
+        <section class="set-display">
+            <div class="set-item"><p><span class="set-identifier">A (Bahan Alami) = </span><span class="set-bracket">{</span><span class="set-content" id="set-a"></span><span class="set-bracket">}</span></p></div>
+            <div class="set-item"><p><span class="set-identifier">B (Bahan Buatan) = </span><span class="set-bracket">{</span><span class="set-content" id="set-b"></span><span class="set-bracket">}</span></p></div>
+            <div class="set-item"><p><span class="set-identifier">C (Nutrisi) = </span><span class="set-bracket">{</span><span class="set-content" id="set-c"></span><span class="set-bracket">}</span></p></div>
+            <div class="set-item"><p><span class="set-identifier">D (% DV*) = </span><span class="set-bracket">{</span><span class="set-content" id="set-d"></span><span class="set-bracket">}</span></p></div>
+        </section>
+        <div class="action-container">
+            <button id="show-diagram-btn">Diagram Panah Pertama</button>
+            <button id="show-diagram-2-btn">Diagram Panah Kedua</button>
+
+            <button id="show-cartesian-1-btn">Diagram Kartesius Pertama</button>
+            <button id="show-cartesian-2-btn">Diagram Kartesius Kedua</button>
+
+            <button id="show-examples-btn">Contoh Kehidupan Sehari-hari</button>
+
+            <button id="show-image-btn">Tampilkan Gambar</button>
+        </div>
+    </main>
+
+    <section id="diagram-section" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Persenan Angka Kecukupan Gizi</h2>
+            <div class="diagram-content">
+                <div class="diagram-column"><ul id="nutrisi-list"></ul></div>
+                <canvas id="relation-canvas"></canvas>
+                <div class="diagram-column"><ul id="akg-list"></ul></div>
+            </div>
+        </div>
+    </section>
+    <section id="diagram-section-2" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Mengandung Protein</h2>
+            <div class="diagram-content">
+                <div class="diagram-column"><ul id="bahan-alami-list"></ul></div>
+                <canvas id="relation-canvas-2"></canvas>
+                <div class="diagram-column"><ul id="nutrisi-list-2"></ul></div>
+            </div>
+        </div>
+    </section>
+    <section id="cartesian-section-1" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Persenan Angka Kecukupan Gizi</h2>
+            <div class="cartesian-content">
+                <canvas id="cartesian-canvas-1"></canvas>
+            </div>
+        </div>
+    </section>
+    <section id="cartesian-section-2" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Mengandung Protein</h2>
+            <div class="cartesian-content">
+                <canvas id="cartesian-canvas-2"></canvas>
+            </div>
+        </div>
+    </section>
+    <section id="examples-section" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Contoh dalam Kehidupan Sehari-hari</h2>
+            <div class="example-content">
+                <p id="example-typewriter" class="rgb-animated-text"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="image-section" class="diagram-section">
+        <div class="diagram-container">
+            <h2>Gambar Komposisi</h2>
+            <div class="image-content">
+                <img src="puffies.png" alt="Gambar Komposisi 1">
+
+                <img src="belakang.png" alt="Gambar Komposisi 2">
+            </div>
+        </div>
+    </section>
+    <div class="watermark" id="watermark">-Made By Kael</div>
+    <div id="credits-modal" class="credits-overlay">
+        <div class="credits-box">
+            <span id="close-credits" class="close-btn">&times;</span>
+            <ul>
+                <li>-Khevin</li>
+                <li>-Geo</li>
+                <li>-Kenzie</li>
+            </ul>
+        </div>
+    </div>
+    <audio id="background-music" src="3_03 PM.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

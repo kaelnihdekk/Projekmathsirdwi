@@ -1,0 +1,220 @@
+/* === STYLE TOMBOL MUSIK BARU === */
+#music-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#music-toggle-btn:hover {
+    opacity: 1;
+    border-color: #fff;
+}
+
+#music-toggle-btn.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+/* =============================== */
+
+/* Pengaturan Dasar */
+body {
+    background: linear-gradient(90deg, #2C3E50, #34495E, #485563, #34495E, #2C3E50);
+    background-size: 400% 400%;
+    animation: slide-right 30s linear infinite;
+    font-family: 'Nunito', sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* KONTEN UTAMA: ANALISIS HIMPunan */
+.content-container { width: 100%; max-width: 900px; opacity: 0; animation: fadeIn 1s ease-out forwards; }
+header { text-align: center; margin-bottom: 50px; }
+header h1 { font-family: 'Lora', serif; font-size: 2.5rem; color: #ffffff; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+header p { font-size: 1.1rem; color: #dcdcdc; }
+.set-item { margin-bottom: 25px; padding: 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
+.set-item p { font-size: 1.1rem; line-height: 1.8; }
+.set-identifier { font-weight: 700; color: #ffffff; }
+.set-bracket { font-weight: 600; color: #f0f0f0; }
+.typing-cursor::after { content: '|'; display: inline-block; animation: blink-cursor 0.7s step-end infinite; color: #ffffff; }
+
+/* STYLE TOMBOL DIPERBARUI */
+#show-diagram-btn, #show-diagram-2-btn,
+#show-cartesian-1-btn, #show-cartesian-2-btn,
+#show-examples-btn, #show-image-btn {
+    margin: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(5px);
+}
+
+#show-diagram-btn:hover, #show-diagram-2-btn:hover,
+#show-cartesian-1-btn:hover, #show-cartesian-2-btn:hover,
+#show-examples-btn:hover, #show-image-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+/* =============================== */
+
+/* BAGIAN DIAGRAM (UMUM) */
+.diagram-section { width: 100%; margin-top: 40px; padding: 40px 0; border-radius: 15px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); max-height: 0; opacity: 0; overflow: hidden; transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.diagram-container { font-family: 'Poppins', sans-serif; width: 100%; max-width: 800px; margin: 0 auto; padding: 0 30px; }
+.diagram-container h2 { text-align: center; margin-bottom: 30px; color: #ffffff; font-weight: 600; }
+.diagram-content { display: flex; justify-content: space-between; align-items: center; position: relative; }
+.diagram-column { flex-basis: 40%; }
+.diagram-column ul { list-style: none; padding: 0; }
+.diagram-column li { padding: 12px 15px; margin: 10px 0; border-radius: 8px; background: rgba(0,0,0,0.25); color: #f0f0f0; text-align: center; }
+#relation-canvas, #relation-canvas-2 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* DIAGRAM 1 SPESIFIK */
+#diagram-section { background: linear-gradient(135deg, #2ab3b5, #358b9e); }
+#diagram-section.visible { max-height: 600px; opacity: 1; padding: 40px 0; }
+
+/* GAYA UNTUK DIAGRAM 2 */
+#diagram-section-2 { background: linear-gradient(135deg, #6CD0FF, #1C2E4C); }
+#diagram-section-2.visible { max-height: 600px; opacity: 1; padding: 40px 0; }
+
+
+/* STYLE UNTUK KARTESIUS */
+#cartesian-section-1 { background: linear-gradient(135deg, #2ab3b5, #358b9e); }
+#cartesian-section-1.visible { max-height: 800px; opacity: 1; padding: 40px 0; }
+#cartesian-section-2 { background: linear-gradient(135deg, #6CD0FF, #1C2E4C); }
+#cartesian-section-2.visible { max-height: 800px; opacity: 1; padding: 40px 0; }
+.cartesian-content { width: 100%; max-width: 800px; margin: 0 auto; padding: 20px; box-sizing: border-box; }
+#cartesian-canvas-1, #cartesian-canvas-2 { width: 100%; height: 500px; background: transparent; border-radius: 8px; }
+/* =================================== */
+
+
+/* STYLE CONTOH */
+#examples-section { background: linear-gradient(135deg, #4B4B4B, #222222); }
+#examples-section.visible { max-height: 1000px; opacity: 1; padding: 40px 0; }
+.example-content { background: rgba(0, 0, 0, 0.25); border-radius: 8px; padding: 30px 40px; color: #f0f0f0; }
+.example-content p { font-family: 'Poppins', sans-serif; font-size: 1.25rem; text-align: center; line-height: 1.8; min-height: 150px; }
+/* ============================== */
+
+
+/* === STYLE GAMBAR DIUBAH === */
+#image-section {
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a);
+}
+#image-section.visible {
+    max-height: 1000px; /* Tingkatkan jika perlu */
+    opacity: 1;
+    padding: 40px 0;
+}
+.image-content {
+    width: 100%;
+    max-width: 800px; /* Lebarkan agar 2 gambar muat */
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 15px; /* Sedikit lebih besar */
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    /* --- Tambahan untuk layout flex --- */
+    display: flex; /* Aktifkan flexbox */
+    justify-content: space-between; /* Beri jarak antar gambar */
+    align-items: flex-start; /* Jaga agar gambar rata atas */
+    gap: 15px; /* Jarak eksplisit antar gambar */
+}
+/* --- Style baru untuk masing-masing gambar --- */
+.image-content img {
+    width: calc(50% - 7.5px); /* Bagi lebar jadi 2, kurangi setengah gap */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain; /* Jaga rasio aspek jika gambar beda ukuran */
+    background-color: rgba(255, 255, 255, 0.1); /* Latar jika gambar transparan */
+}
+/* =============================== */
+
+
+/* GAYA UNTUK WATERMARK & POP-UP KREDIT */
+.watermark { 
+    position: fixed; bottom: 10px; right: 15px; 
+    font-size: 0.8rem; color: #fff; opacity: 0.3; 
+    cursor: pointer; transition: opacity 0.3s ease; z-index: 99; 
+}
+.watermark:hover { opacity: 0.7; }
+
+.credits-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center; align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+.credits-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.credits-box {
+    background: #2c3e50; padding: 25px 40px;
+    border-radius: 10px; color: #fff; position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.credits-overlay.visible .credits-box {
+    opacity: 1;
+    transform: scale(1);
+}
+.credits-box ul { list-style: none; padding: 0; margin: 0; }
+.credits-box li { font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin: 10px 0; }
+.close-btn { position: absolute; top: 5px; right: 12px; font-size: 1.8rem; color: #fff; cursor: pointer; opacity: 0.7; }
+.close-btn:hover { opacity: 1; }
+/* ====================================================== */
+
+/* Animasi */
+@keyframes slide-right {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes blink-cursor { from, to { opacity: 1; } 50% { opacity: 0; } }
+
+/* KEYFRAME UNTUK TEKS RGB */
+@keyframes rgb-text-anim {
+    0%   { color: #ff00de; }
+    25%  { color: #00aaff; }
+    50%  { color: #00ff73; }
+    75%  { color: #fffb00; }
+    100% { color: #ff00de; }
+}
+.rgb-animated-text {
+    animation: rgb-text-anim 3s linear infinite;
+}
+/* ================================== */
