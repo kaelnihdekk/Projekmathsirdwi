@@ -55,6 +55,12 @@ header p { font-size: 1.1rem; color: #dcdcdc; }
 .set-bracket { font-weight: 600; color: #f0f0f0; }
 .typing-cursor::after { content: '|'; display: inline-block; animation: blink-cursor 0.7s step-end infinite; color: #ffffff; }
 
+/* === INI TAMBAHANNYA === */
+.action-container {
+    text-align: center;
+}
+/* ======================= */
+
 /* STYLE TOMBOL DIPERBARUI */
 #show-diagram-btn, #show-diagram-2-btn,
 #show-cartesian-1-btn, #show-cartesian-2-btn,
